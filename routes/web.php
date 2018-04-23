@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+/*
+Route::get('/users/{id}/{name}', function ($id,$name) {
+    return 'this is user '.$id.' with name '.$name;
+
 });
+*/
+
+Route::get('/','PagesController@index');
+
+Route::get('/about','PagesController@about' );
+
+Route::get('/services','PagesController@services' );
