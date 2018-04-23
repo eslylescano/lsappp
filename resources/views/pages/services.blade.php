@@ -1,14 +1,12 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{config('app.name','LSAPP')}}</title>
-    </head>
+@extends('layouts.app')
+@section('content')
     <body>
-        <h1>Services</h1>
-        <p>This is the services page</p>
-    </body>
-</html>
+        <h1>{{$title}}</h1>
+        <ul class="list-group">
+            @if(count($services)>0)
+                @foreach($services as $service)
+                    <li class="list-group-item">{{$service}}</li>
+                @endforeach
+            @endif
+        </ul>
+@endsection
